@@ -4,22 +4,22 @@
 - Fenwick Tree
 - Segment Tree
 
-## String Processing *<TO-DO>*
-- Rabin Karp
+## String Processing *<IN-PROGRESS>*
+- Rabin Karp *<TO-DO>*
 - Knuth-Morris-Pratt (KMP)
-- Z-function
-- Suffix Array
-- Aho-Corasick Algorithm
-- Suffix Tree
-- Suffix Automaton
+- Z-function *<TO-DO>*
+- Suffix Array *<TO-DO>*
+- Aho-Corasick Algorithm *<TO-DO>*
+- Suffix Tree (Ukkonen) *<TO-DO>*
+- Suffix Automaton *<TO-DO>*
 
-## Graphs *<TO-DO>*
-- Graph Traversal
-- Shortest Paths
-- Tree Algorithms
-- Spanning Trees
-- Directed Graphs
-- Strong Connectivity
-- Tree Queries
-- Paths and Circuits
-- Flows and Cuts
+## Graphs *<IN-PROGRESS>*
+- Graph Traversal *<TO-DO>*
+- Shortest Paths *<TO-DO>*
+- Tree Algorithms *<TO-DO>*
+- Spanning Trees *<TO-DO>*
+- Directed Graphs *<TO-DO>*
+- Strong Connectivity *<TO-DO>*
+- Tree Queries *<TO-DO>*
+- Paths and Circuits *<TO-DO>*
+- Flows and Cuts *<TO-DO>*
