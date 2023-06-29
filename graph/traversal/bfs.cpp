@@ -1,12 +1,8 @@
-#include <iostream>
-#include <vector>
-#include <queue>
+#include <bits/stdc++.h>
 
 using namespace std;
- 
-typedef vector<int> vi;
 
-void bfs(vector<vi> &adj, int n, int s) {
+void bfs(vector<vector<int>> &adj, int n, int s) {
     queue<int> q;
     vector<bool> used(n);
     vector<int> d(n), p(n);

@@ -1,14 +1,10 @@
-#include <iostream>
-#include <vector>
-#include <queue>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-typedef vector<int> vi;
-
 int dfs_timer = 0;
 
-void dfs(vector<vi> &adj, vi &time_in, vi &time_out, vi &color, int v) {
+void dfs(vector<vector<int>> &adj, vector<int> &time_in, vector<int> &time_out, vector<int> &color, int v) {
     time_in[v] = dfs_timer++;
     color[v] = 1;
     for (int u : adj[v])
