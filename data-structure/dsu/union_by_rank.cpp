@@ -1,23 +1,16 @@
-#include <vector>
-#include <algorithm>
-#include <numeric>
-#include <cstring>
+#include <bits/stdc++.h>
 
 using namespace std;
- 
-typedef vector<int> vi;
-
-#define all(v) v.begin(), v.end()
  
 class DSU {
     private:
         int n;
-        vi parent, rank;
+        vector<int> parent, rank;
     
     public:
         DSU(int n) {
             this->n = n;
-            iota(all(parent), 0);
+            iota(parent.begin(), parent.end(), 0);
             rank.assign(n, 0);
         }
 
