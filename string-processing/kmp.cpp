@@ -1,13 +1,10 @@
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 
 using namespace std;
- 
-typedef vector<int> vi;
 
-vi prefix_function(string s) {
+vector<int> prefix_function(const string &s) {
     int n = s.size();
-    vi pi(n);
+    vector<int> pi(n);
 
     for (int i = 1; i < n; i++) {
         int j = pi[i-1];
