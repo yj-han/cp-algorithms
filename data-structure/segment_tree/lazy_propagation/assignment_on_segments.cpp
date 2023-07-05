@@ -67,5 +67,5 @@ int query(vi &t, vb &marked, int v, int tl, int tr, int pos) {
         return t[v];
     push(t, marked, v);
     int tm = (tl + tr)/2;
-    return (pos <= tm)? query(t, marked, v, tl, tm, pos): query(t, marked, v, tl, tm, pos);
+    return (pos <= tm)? query(t, marked, v*2, tl, tm, pos): query(t, marked, v*2+1, tm+1, tr, pos);
 }
