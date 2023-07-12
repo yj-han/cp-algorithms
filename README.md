@@ -2,20 +2,22 @@
 ## Data Structures
 - Disjoint Set Union (DSU)
 - Fenwick Tree
+- Sparse Table
 - Segment Tree
 
 ## String Processing *<IN-PROGRESS>*
 - Rabin Karp *<TO-DO>*
 - Knuth-Morris-Pratt (KMP)
-- Z-function *<TO-DO>*
+- Z-function
 - Suffix Array *<TO-DO>*
-- Aho-Corasick Algorithm *<TO-DO>*
+- Aho-Corasick Algorithm
 - Suffix Tree (Ukkonen) *<TO-DO>*
 - Suffix Automaton *<TO-DO>*
 
 ## Graphs *<IN-PROGRESS>*
-- Graph Traversal *<TO-DO>*
-- Shortest Paths *<TO-DO>*
+- Graph Traversal
+- Single-Source Shortest Paths (SSSP)
+- All-Pairs Shortest Paths
 - Tree Algorithms *<TO-DO>*
 - Spanning Trees *<TO-DO>*
 - Directed Graphs *<TO-DO>*
