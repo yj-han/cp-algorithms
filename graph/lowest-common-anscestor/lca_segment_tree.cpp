@@ -1,23 +1,16 @@
-#include <iostream>
-#include <vector>
-#include <queue>
-
+#include <bits/stdc++.h>
 using namespace std;
 
-typedef pair<int, int> ii; 
-typedef vector<int> vi;
-typedef vector<bool> vb;
-
 struct LCA {
-    vi height, euler, first, segtree, d_to_r;
-    vb visited;
+    vector<int> height, euler, first, segtree, d_to_r;
+    vector<bool> visited;
     int n;
 
-    LCA(vector<vi> &adj, int root = 0) {
+    LCA(vector<vector<int>> &adj, int root = 0) {
         n = adj.size();
         height.resize(n);
         first.resize(n);
-        euler.reserve(n * 2);
+        euler.resize(n * 2);
         visited.assign(n, false);
         dfs(adj, root);
         int m = euler.size();
@@ -25,7 +18,7 @@ struct LCA {
         build(1, 0, m-1);
     }
 
-    void dfs(vector<vi> &adj, int node, int h = 0) {
+    void dfs(vector<vector<int>> &adj, int node, int h = 0) {
         visited[node] = true;
         height[node] = h;
         first[node] = euler.size();
@@ -71,7 +64,7 @@ struct LCA {
         if (left > right)
             swap(left, right);
 
-        return query(1, 0, euler.size()-1, left, right);
+        return query(1, 0, int(euler.size())-1, left, right);
     }
 
     int dist(int u, int v) {
