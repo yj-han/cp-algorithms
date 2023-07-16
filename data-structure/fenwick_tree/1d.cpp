@@ -64,18 +64,18 @@ struct FenwickTree {
 
 
 int sum(vector<int> &bit, int idx) {
-	int ret = 0;
-	for (idx++; idx > 0; idx -= idx & -idx)
-		ret += bit[idx];
-	return ret;
+    int ret = 0;
+    for (idx++; idx > 0; idx -= idx & -idx)
+        ret += bit[idx];
+    return ret;
 }
 
 int sum(vector<int> &bit, int l, int r) {
-	return sum(bit, r) - sum(bit, l-1);
+    return sum(bit, r) - sum(bit, l-1);
 }
 
 void add(vector<int> &bit, int idx, int delta) {
-	int n = bit.size();
-	for (idx++; idx < n; idx += idx & -idx)
-		bit[idx] += delta;
+    int n = bit.size();
+    for (idx++; idx < n; idx += idx & -idx)
+        bit[idx] += delta;
 }
