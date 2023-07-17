@@ -38,7 +38,7 @@ void update(vector<long long> &t, vector<long long> &lazy, int v, int tl, int tr
 }
 
 long long query(vector<long long> &t, vector<long long> &lazy, int v, int tl, int tr, int l, int r) {
-    if (l > r) return;
+    if (l > r) return 0;
     if (tl == l && tr == r)
         return t[v];
     push(t, lazy, v);

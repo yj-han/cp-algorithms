@@ -1,51 +1,21 @@
-#include <iomanip>
-#include <iostream>
-#include <vector>
-#include <set>
-#include <bitset>
-#include <map>
-#include <algorithm>
-#include <cmath>
-#include <queue>
-#include <stack>
-#include <numeric>
-#include <cstring>
-
+#include <bits/stdc++.h>
 using namespace std;
- 
-typedef long long ll;
-typedef vector<int> vi;
-typedef vector<string> vs;
-typedef vector<ll> vll;
-typedef vector<bool> vb;
-typedef pair<int, int> ii;
-typedef vector<ii> vii;
-typedef set<int> si;
-typedef map<int, int> mii;
-typedef map<char, int> mci;
- 
-#define mp make_pair 
-#define pb push_back
-#define all(v) v.begin(), v.end()
- 
-const int INF = 1e9;
-const int MOD = 1e9 + 7;
 
 struct node {
-    ll sum, left_max, right_max, cur_max;
-    node(ll sum, ll left_max, ll right_max, ll cur_max): 
+    long long sum, left_max, right_max, cur_max;
+    node(long long sum, long long left_max, long long right_max, long long cur_max): 
         sum(sum), left_max(left_max), right_max(right_max), cur_max(cur_max) {}
-    node(ll x = 0): sum(x), left_max(max(0LL, x)), right_max(max(0LL, x)), cur_max(max(0LL, x)) {}
+    node(long long x = 0): sum(x), left_max(max(0ll, x)), right_max(max(0ll, x)), cur_max(max(0ll, x)) {}
     friend node operator+(const node &a, const node &b) {
-        ll sum = a.sum + b.sum;
-        ll left_max = max(a.left_max, a.sum + b.left_max);
-        ll right_max = max(b.right_max, a.right_max + b.sum);
-        ll cur_max = max({left_max, right_max, a.cur_max, b.cur_max, sum, a.right_max + b.left_max});
+        long long sum = a.sum + b.sum;
+        long long left_max = max(a.left_max, a.sum + b.left_max);
+        long long right_max = max(b.right_max, a.right_max + b.sum);
+        long long cur_max = max({left_max, right_max, a.cur_max, b.cur_max, sum, a.right_max + b.left_max});
         return {sum, left_max, right_max, cur_max};
     }
 };
 
-void build(vector<node> &t, vll &a, int v, int tl, int tr) {
+void build(vector<node> &t, vector<long long> &a, int v, int tl, int tr) {
     if (tl == tr) {
         t[v] = node(a[tl]);
     } else {
@@ -68,7 +38,7 @@ void update(vector<node> &t, int v, int tl, int tr, int pos, int val) {
     }
 }
 
-node query(vector<node> t, int v, int tl, int tr, int l, int r) {
+node query(vector<node> &t, int v, int tl, int tr, int l, int r) {
     if (l > r) 
         return 0;
     if (tl == l && tr == r) 

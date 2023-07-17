@@ -1,4 +1,3 @@
-#include <iomanip>
 #include <iostream>
 #include <vector>
 #include <set>
@@ -63,7 +62,7 @@ void update(vector<node> &t, int v, int tl, int tr, int pos, int val) {
     }
 }
 
-node query(vector<node> t, int v, int tl, int tr, int l, int r) {
+node query(vector<node> &t, int v, int tl, int tr, int l, int r) {
     if (l > r) 
         return 0;
     if (tl == l && tr == r) 
