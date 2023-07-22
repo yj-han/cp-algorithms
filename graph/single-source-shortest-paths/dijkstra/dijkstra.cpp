@@ -1,13 +1,5 @@
-#include <iostream>
-#include <vector>
-#include <queue>
-
+#include <bits/stdc++.h>
 using namespace std;
-
-typedef pair<int, int> ii; 
-typedef vector<int> vi;
-typedef vector<bool> vb;
-
 
 const int INF = 1e9;
 
@@ -19,11 +11,11 @@ struct edge {
     }
 };
 
-void dijkstra_densed(int s, vector<vector<edge>> &adj, vi &d, vi &p) {
+void dijkstra_densed(int s, vector<vector<edge>> &adj, vector<int> &d, vector<int> &p) {
     int n = adj.size();
     d.assign(n, INF);
     p.assign(n, -1);
-    vb used(n, false);
+    vector<bool> used(n, false);
 
     d[s] = 0;
     for (int i = 0; i < n; i++) {
@@ -46,12 +38,12 @@ void dijkstra_densed(int s, vector<vector<edge>> &adj, vi &d, vi &p) {
     }
 }
 
-void dijkstra_sparsed(int s, vector<vector<edge>> &adj, vi &d, vi &p) {
+void dijkstra_sparsed(int s, vector<vector<edge>> &adj, vector<int> &d, vector<int> &p) {
     int n = adj.size();
     d.assign(n, INF);
     p.assign(n, false);
     
-    priority_queue<ii, vector<ii>, greater<ii>> pq;
+    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
     d[s] = 0;
     pq.push({0, s});
 
