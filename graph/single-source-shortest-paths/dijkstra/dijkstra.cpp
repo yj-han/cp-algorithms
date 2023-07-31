@@ -41,7 +41,7 @@ void dijkstra_densed(int s, vector<vector<edge>> &adj, vector<int> &d, vector<in
 void dijkstra_sparsed(int s, vector<vector<edge>> &adj, vector<int> &d, vector<int> &p) {
     int n = adj.size();
     d.assign(n, INF);
-    p.assign(n, false);
+    p.assign(n, -1);
     
     priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
     d[s] = 0;
