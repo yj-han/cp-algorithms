@@ -1,28 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
  
-vector<int> manacher_odd(string s) {
-    int n = s.size();
-    s = "$" + s + "^";
-    vector<int> p(n + 2);
-    int l = 1, r = 1;
-    for(int i = 1; i <= n; i++) {
-        p[i] = max(0, min(r - i, p[l + (r - i)]));
-        while(s[i - p[i]] == s[i + p[i]]) {
-            p[i]++;
-        }
-        if(i + p[i] > r) {
-            l = i - p[i], r = i + p[i];
-        }
-    }
-    return vector<int>(begin(p) + 1, end(p) - 1);
-}
-
-vector<int> manacher(string s) {
+vector<vector<int>> manacher(string s) {
     int n = s.size();
     vector<vector<int>> p(2, vector<int>(n,0));
-    for(int z = 0, l = 0, r = 0; z < 2; z++, l = 0, r = 0) {
-        for(int i = 0; i < n; i++) {
+    for (int z = 0; z < 2; z++) {
+        int l = 0, r = 0;
+        for (int i = 0; i < n; i++) {
             if (i < r) {
                 p[z][i] = min(r-i+!z, p[z][l+r-i+!z]);
             }
@@ -35,4 +19,39 @@ vector<int> manacher(string s) {
             }
         }
     }
+    return p;
+}
+
+string str;
+vector<int> rad;
+int ans = 0;
+string out;
+
+void manacher(string &s) {
+    rad = vector<int> ((int)str.length(), 0);
+    int mr = 0, mid;
+    for (int i = 1; i < str.length(); ++i) {
+        rad[i] = i < mr ? min(mr - i, rad[mid * 2 - i]) : 1;
+        for (; str[i + rad[i]] == str[i - rad[i]]; ++rad[i]) 
+            if (i + rad[i] > mr) 
+                mid = i, mr = i + rad[i];
+        if (rad[i] - 1 > ans) {
+            ans = rad[i] - 1; 
+            out = s.substr((i - ans) / 2, ans); 
+        }
+    }
+}
+
+void init(string &s) {
+    str = string((int)s.length() * 2 + 2, ' ');
+    str[0] = str[1] = '#';
+    for (int i = 0; i < s.length(); ++i) {
+        str[i * 2 + 2] = s[i];
+        str[i * 2 + 3] = '#';
+    }
+}
+
+string longestPalindrome(string &s) {
+    init(s);
+
 }

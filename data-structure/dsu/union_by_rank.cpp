@@ -15,9 +15,7 @@ class DSU {
         }
 
         int find_set(int u) {
-            if (parent[u] == u)
-                return u;
-            return parent[u] = find_set(parent[u]);
+            return (parent[u] == u) ? u : parent[u] = find_set(parent[u]);
         }
 
         void union_set(int u, int v) {

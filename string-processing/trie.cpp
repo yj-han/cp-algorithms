@@ -30,9 +30,12 @@ struct Trie {
     }
 
     bool solve(string& s, int idx) {
-        if (idx == s.length()) return false;
-        if (!t[s[idx]-'a']) return false;
-        if (t[s[idx]-'a']->end) return true;
+        if (idx == s.length()) 
+            return false;
+        if (!t[s[idx]-'a']) 
+            return false;
+        if (t[s[idx]-'a']->end) 
+            return true;
         return t[s[idx]-'a']->solve(s, idx+1);
     }
 };

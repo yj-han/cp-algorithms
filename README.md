@@ -6,7 +6,7 @@
 - Segment Tree
 
 ## String Processing *<IN-PROGRESS>*
-- Rabin Karp *<TO-DO>*
+- Rabin Karp
 - Knuth-Morris-Pratt (KMP)
 - Z-function
 - Suffix Array *<TO-DO>*

@@ -1,47 +1,17 @@
-#include <iomanip>
-#include <iostream>
-#include <vector>
-#include <set>
-#include <bitset>
-#include <map>
-#include <algorithm>
-#include <cmath>
-#include <queue>
-#include <stack>
-#include <numeric>
-#include <cstring>
-
+#include <bits/stdc++.h>>
 using namespace std;
  
-typedef long long ll;
-typedef vector<int> vi;
-typedef vector<string> vs;
-typedef vector<ll> vll;
-typedef vector<bool> vb;
-typedef pair<int, int> ii;
-typedef vector<ii> vii;
-typedef set<int> si;
-typedef map<int, int> mii;
-typedef map<char, int> mci;
- 
-#define mp make_pair 
-#define pb push_back
-#define all(v) v.begin(), v.end()
- 
-const int INF = 1e9;
-const int MOD = 1e9 + 7;
-
 struct FenwickTree2D {
-    vector<vi> bit;
+    vector<vector<int>> bit;
     int n, m;
     
     FenwickTree2D(int n, int m) {
         this->n = n + 1;
         this->m = m + 1;
-        bit.assign(n+1, vi(m+1, 0));
+        bit.assign(n+1, vector<int>(m+1, 0));
     }
 
-    FenwickTree2D(vector<vi> a): FenwickTree2D(a.size(), a[0].size()) {
+    FenwickTree2D(vector<vector<int>> a): FenwickTree2D(a.size(), a[0].size()) {
         for (size_t i = 0; i < a.size(); i++)
             for (size_t j = 0; j < a[0].size(); j++)
                 add(i, j, a[i][j]);

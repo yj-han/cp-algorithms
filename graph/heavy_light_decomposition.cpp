@@ -26,7 +26,7 @@ struct Seg {
 
 int sz[101010], dep[101010], par[101010], top[101010], in[101010], out[101010];
 vector<int> g[101010];
-vector<int> inp[101010]; //입력 / 양방향 그래프
+vector<int> inp[101010];
 
 int chk[101010];
 void dfs(int v = 1) {
